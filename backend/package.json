@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --watch src --exec ts-node src/index.ts",
+    "build": "tsc",
     "migrate:up": "knex migrate:latest --knexfile knexfile.js --env development",
     "migrate:down": "knex migrate:rollback --knexfile knexfile.js --env development"
   },
