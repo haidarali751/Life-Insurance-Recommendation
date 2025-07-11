@@ -1,6 +1,7 @@
 import cors from "cors";
 import helmet from "helmet";
 import express from "express";
+import routes from "./routes";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -47,6 +48,8 @@ app.use(
 app.get("/health", (req, res) => {
   res.json({ status: "ok" });
 });
+
+app.use(routes);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
