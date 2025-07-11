@@ -9,6 +9,10 @@ const knex = Knex({
     user: process.env.PGUSER || "user",
     password: process.env.PGPASSWORD || "password",
     database: process.env.PGDATABASE || "db_name",
+    ssl:
+      process.env.PGSSLMODE === "require"
+        ? { rejectUnauthorized: false }
+        : false,
   },
 });
 
