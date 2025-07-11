@@ -1,5 +1,6 @@
 import Knex from "knex";
 import { Model } from "objection";
+require("dotenv").config();
 
 const knex = Knex({
   client: "pg",
