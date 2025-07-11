@@ -1,13 +1,17 @@
-// Update with your config settings.
-
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 module.exports = {
   development: {
-    client: "sqlite3",
+    client: "pg",
     connection: {
-      filename: "./dev.sqlite3",
+      host: process.env.PGHOST || "host",
+      user: process.env.PGUSER || "user",
+      password: process.env.PGPASSWORD || "password",
+      database: process.env.PGDATABASE || "db_name",
+    },
+    migrations: {
+      tableName: "knex_migrations",
     },
   },
 

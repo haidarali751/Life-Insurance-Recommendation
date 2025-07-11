@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --watch src --exec ts-node src/index.ts",
+    "migrate:up": "knex migrate:latest --knexfile knexfile.js --env development",
+    "migrate:down": "knex migrate:rollback --knexfile knexfile.js --env development"
   },
   "keywords": [],
   "author": "",
@@ -12,11 +14,18 @@
   "dependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.13",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
     "express": "^5.1.0",
+    "helmet": "^8.1.0",
     "knex": "^3.1.0",
     "objection": "^3.1.5",
     "pg": "^8.16.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "nodemon": "^3.1.10"
   }
 }
