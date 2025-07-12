@@ -17,12 +17,12 @@ const Select: React.FC<SelectProps> = ({ label, options, ...props }) => (
     <select
       {...props}
       className={
-        "px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition shadow-sm bg-gray-50 " +
+        "px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition shadow-sm bg-gray-50 text-gray-700 " +
         (props.className || "")
       }
     >
       {options.map((opt) => (
-        <option key={opt} value={opt}>
+        <option key={opt} value={opt} className="text-gray-700">
           {opt}
         </option>
       ))}

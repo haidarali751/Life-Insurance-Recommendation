@@ -120,7 +120,7 @@ export default function InsuranceForm() {
               options={riskOptions}
             />
           </div>
-          <Button type="submit" loading={loading}>
+          <Button className="cursor-pointer" type="submit" loading={loading}>
             Get Recommendation
           </Button>
         </form>
@@ -136,7 +136,7 @@ export default function InsuranceForm() {
             <p className="text-gray-700 text-base">{explanation}</p>
           </div>
           <button
-            className="mt-6 text-blue-600 underline font-medium hover:text-blue-800"
+            className="mt-6 text-blue-600 underline font-medium hover:text-blue-800 cursor-pointer"
             onClick={() => setSubmitted(false)}
           >
             Back
